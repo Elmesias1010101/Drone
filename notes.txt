@@ -1,0 +1,35 @@
+Pour accéder au rosmaster (étape 0):
+
+roscore
+
+Un noeud(node) est un programme (.py, .cpp ect...) ils sont lancé par le rosmaster
+Le topic est un canal de communication entre les noeuds. Chaque topic a un nom est une "data structure"
+
+Pour lire le contenue d'un topic, il faut avoir un "subscriber" dans le noeud
+Pour envoyer du contenue dans un topic, il faut un "publisher" dans le noeud
+
+Il daut rentrer le nom de nos scripts dans le CMakeList.txt de notre package
+Chercher "catckin_install_python" (partie commenté)
+Ensuite, revenir à l'origine et faire catkin_make
+faire un truc avec rosrun et bash pour lancer le script 
+
+____________________________________COMMANDE UTILE_________________________________________
+
+cd catkin_ws/
+cd src/
+
+rosrun ardrone_autonomy adrone_driver -ip [192.168.1.201]
+
+chmod image_reader.py
+
+Dans source:
+catkin_create_pkg [nom] [dependances] 
+Ex : catkin_create_pkg my_package ardrone_autonomy cv_bridge
+
+Dans my_package:
+mkdir src
+mkdir scripts (<- contient les programmes pythons/c++)
+
+Dans scipts:
+[editeur de text] [nom du script]
+Ex: gedit my_script.py
